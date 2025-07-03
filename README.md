@@ -42,5 +42,3 @@ Calculatrice scientifique avancée pour la résolution d'équations mathématiqu
 ISC
 
 ---
-
-*Pour toute question ou amélioration, ouvrez une issue sur GitHub !* 
