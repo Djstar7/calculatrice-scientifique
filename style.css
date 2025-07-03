@@ -1,0 +1,209 @@
+/* RESET DE BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Empêche tout scroll */
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    max-height: 725.33px;
+    max-width: 626px;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#calco {
+    width: 350px;
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 12px 24px 12px;
+    transition: width 0.2s, height 0.2s, font-size 0.2s;
+}
+
+#ecran {
+    background: #22223b;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 60px;
+    transition: padding 0.2s, font-size 0.2s;
+}
+
+#ecran_entree, #ecran_sortie {
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    min-height: 28px;
+    word-break: break-all;
+    padding: 2px 0;
+    transition: font-size 0.2s;
+}
+#ecran_sortie {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #a3e635;
+}
+
+#fonction, #fonctionTrigo, #math {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 8px;
+    transition: gap 0.2s;
+}
+#fonction {
+    grid-template-columns: repeat(4, 1fr);
+}
+#fonctionTrigo, #math {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#pave {
+    display: flex;
+    gap: 8px;
+    transition: gap 0.2s;
+}
+#chiffre {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 75%;
+    background: #22223b;
+    border-radius: 12px;
+    padding: 8px 0;
+    transition: padding 0.2s;
+}
+#signe {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 25%;
+    margin-left: 0;
+    background: #4a4e69;
+    border-radius: 12px;
+    padding: 8px 0;
+    transition: padding 0.2s;
+}
+
+#calco input[type="button"] {
+    border-radius: 12px;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    background: #f2e9e4;
+    color: #22223b;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, transform 0.1s, font-size 0.2s, padding 0.2s;
+    cursor: pointer;
+}
+#calco input[type="button"]:hover {
+    background: #c9ada7;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+#calco input[type="button"]:focus, #calco input[type="button"]:active {
+    outline: 2px solid #a3e635;
+    outline-offset: 2px;
+    background: #22223b;
+    color: #a3e635;
+    box-shadow: 0 0 0 3px rgba(163,230,53,0.2);
+}
+
+#fonction input[type="button"] {
+    background: #9a8c98;
+    color: #fff;
+}
+#fonction input[value="="] {
+    background: #a3e635;
+    color: #22223b;
+    border-radius: 50%;
+    font-weight: bold;
+}
+#fonction input[value="DEL"] {
+    background: #e63946;
+}
+#fonction input[value="AS"] {
+    background: #f1c40f;
+    color: #22223b;
+}
+
+#fonctionTrigo input[type="button"] {
+    background: #f2e9e4;
+    color: #22223b;
+}
+#math input[type="button"] {
+    background: #22223b;
+    color: #a3e635;
+}
+#signe input[type="button"] {
+    background: #4a4e69;
+    color: #fff;
+}
+#chiffre input[type="button"] {
+    background: #9a8c98;
+    color: #fff;
+}
+
+/* Responsive : réduction progressive de la taille des éléments pour éviter tout scroll */
+@media (max-width: 700px), (max-height: 700px) {
+    #calco {
+        width: 95vw;
+        max-width: 99vw;
+        max-height: 95vh;
+        padding: 10px 4px 14px 4px;
+        border-radius: 16px;
+        gap: 6px;
+    }
+    #ecran {
+        font-size: 1rem;
+        padding: 6px 4px;
+        min-height: 40px;
+    }
+    #ecran_entree, #ecran_sortie {
+        font-size: 1rem;
+        min-height: 20px;
+    }
+    #ecran_sortie {
+        font-size: 1.1rem;
+    }
+    #fonction, #fonctionTrigo, #math {
+        gap: 4px;
+        margin-bottom: 4px;
+    }
+    #pave {
+        gap: 4px;
+    }
+    #chiffre, #signe {
+        padding: 4px 0;
+        border-radius: 8px;
+        gap: 4px;
+    }
+    #calco input[type="button"] {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+}
+
+/* Ancien style supprimé pour éviter les conflits et doublons */

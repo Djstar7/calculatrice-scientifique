@@ -1,0 +1,40 @@
+{
+  "name": "calculatrice",
+  "version": "1.0.0",
+  "description": "Une calculatrice en HTML/CSS/JS qui resoud les equations mathematiques et trigonometriques complexes",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.calco.app",
+    "productName": "Calco-DJSTAR",
+    "directories": {
+      "output": "dist"
+    },
+    "extraResources": [
+      "node_modules",
+      "assets"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "./src/assets/logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./src/assets/logo.ico",
+      "uninstallerIcon": "./src/assets/logo.ico"
+    },
+    "asar": false,
+    "copyright": "DJSTAR Service"
+  },
+  "keywords": [],
+  "author": "Stael DJUNE",
+  "license": "ISC"
+}
